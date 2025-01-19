@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <button type="button" onclick="update(event)">Ram</button>
+        <button type="button" onclick="update(event)">Ravi</button>
+        <button type="button" onclick="update(event)">Kavi</button>
+        <p id="names">Button name</p>
+        <input type="text" id="name" placeholder="Enter name"/>
+        <button type="button" onclick="replicate()">Show all names</button>
+
+        <p id="show"></p>
+       
+    </body>
+    <script>
+            var con=document.getElementById("names");
+        function update(event){
+            con.innerHTML=event.target.textContent;
+        }
+        function replicate(){
+            var h2=document.createElement("h2");
+            h2.textContent=document.getElementById("name").value;
+            document.getElementById("show").append(h2);
+        }
+    </script>
+
+</html>

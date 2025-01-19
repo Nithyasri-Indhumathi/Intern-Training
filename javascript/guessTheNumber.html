@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Guess the number game
+        </title>
+        <style>
+            #mark{
+                background-color: rgb(203, 137, 51);
+
+            }
+            .new{
+                width: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>GUESS THE NUMBER FROM 1 TO 10</h2>
+        <h4>If you guess correctly your score will be increased by 1 point or decreased by 1 point.Initially your score is 10</h4>
+        <input type="number" id="num" placeholder="Enter num you guessed"/>
+       
+        <button type="button" onclick="calculate()">Submit</button>
+      
+        <h4 >YOUR CURRRENT SCORE WILL BE DISPLAYED HERE ONCE YOU SUBMIT.</h4>
+        <h4 id="mark">Score:10</h4>
+    </body>
+    <script>
+
+        var n=document.getElementById("num");
+        var score=10;
+        function calculate(){
+            var guess=Math.random();
+            var  guess_num=Math.floor((guess*10)+1);
+            var number=Number(n.value)
+            if(number==guess_num){
+                score++;
+                alert("You are right");
+                document.getElementById("mark").style.backgroundColor="green";
+               
+            }
+            else{
+                score--;
+                alert("You are wrong,And the correct number is "+guess_num);
+                document.getElementById("mark").style.backgroundColor="red";
+                document.getElementById("mark").setAttribute("class","new");
+            }
+            document.getElementById("mark").innerHTML="Score:"+score;
+        }
+    </script>
+</html>

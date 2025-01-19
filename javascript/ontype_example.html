@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <input type="text" id="some" onkeyup="copy()" placeholder="Enter name"/> 
+        <p id="show"></p>
+    </body>
+    <script>
+        function copy(){
+            var a=document.getElementById("some").value;//onclick can also be used instead of onkeyup
+            document.getElementById("show").innerHTML=a;
+
+        }
+    </script>
+
+</html>
